@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EventTool</title>
+</head>
+<body>
+<form>
+<input name='input1' type="number" value="">
+<input name='input2' type="text" value="">
+<input name='input3' type="text" value="">
+<input name='input4' type="text" value="">
+<button type="submit">submit</button>
+</form>
+<div>
+	<ul id="test">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</div>
+</body>
+<script type="text/javascript" src="UntilTool.js"></script>
+<script type="text/javascript">
+	// 事件委托
+var ule=document.getElementById('test');
+var lie=document.getElementsByTagName('li');
+UntilTool.addElementListener(ule,'click',handler)
+function handler(){
+var evt=UntilTool.getEvent();
+// console.log(evt);
+for(var i=0,len=lie.length;i<len;i++){
+if(lie[i]==UntilTool.getTarget(evt)){
+	alert(i);
+}
+}
+}
+</script>
+</html>
