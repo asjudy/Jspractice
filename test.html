@@ -11,6 +11,10 @@
 <input name='input4' type="text" value="">
 <button type="submit">submit</button>
 </form>
+<div class="te">
+	<div></div>
+	<div>324432</div>
+</div>
 <div>
 	<ul id="test">
 		<li>1</li>
@@ -20,21 +24,54 @@
 		<li>5</li>
 	</ul>
 </div>
+<div id="container">
+    <div></div>
+    <div></div>
+</div>
 </body>
 <script type="text/javascript" src="UntilTool.js"></script>
 <script type="text/javascript">
 	// 事件委托
-var ule=document.getElementById('test');
-var lie=document.getElementsByTagName('li');
-UntilTool.addElementListener(ule,'click',handler)
-function handler(){
-var evt=UntilTool.getEvent();
-// console.log(evt);
-for(var i=0,len=lie.length;i<len;i++){
-if(lie[i]==UntilTool.getTarget(evt)){
-	alert(i);
-}
-}
-}
+// var ule=document.getElementById('test');
+// var lie=document.getElementsByTagName('li');
+// UntilTool.addElementListener(ule,'click',handler)
+// function handler(){
+// var evt=UntilTool.getEvent();
+// // console.log(evt);
+// for(var i=0,len=lie.length;i<len;i++){
+// if(lie[i]==UntilTool.getTarget(evt)){
+// 	alert(i);
+// 		}
+// 	}
+// }
+
+//作用域1
+// (function(){
+// 	for(var i=0;i<3;i++){
+// 		(function(){
+// 			alert(i);
+// 		})();
+// 	}
+// })();
+
+//作用域2
+(function(){
+	var lis=document.getElementById('test').getElementsByTagName('li');
+	for(var i=0;i<lis.length;i++){
+		lis[i].onclick=(function(i){return function(){alert(i);}})(i);
+	}
+})();
+
+//queryselector   queryselectorall()
+var container=document.getElementById('container');
+var container2=document.querySelector('#container');
+console.log(container);
+console.log(container2);
+container.appendChild(document.createElement('div'));
+container2.appendChild(document.createElement('div'));
+console.log(container.childNodes.length);
+console.log(container2);
+
+
 </script>
 </html>

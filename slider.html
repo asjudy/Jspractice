@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slider</title>
+	<style type="text/css">
+	.clearfix:after{
+		display: table;
+		content: '';
+		clear: both;
+		line-height: 0;
+	}
+	ul{margin:0;}
+	#j-ad{position: relative;width:980px;}
+	.ad-img{position: relative;width: 980px;height: 80px;}
+	.ad-img a{position: absolute;}
+	.num{position: absolute;bottom:6px;right:10px;}
+	.num li{list-style:none;float: left;width:16px;height:16px;text-align:center;vertical-align:middle;border-radius:50%;margin-left:10px;background:#e2e2e2;}
+	</style>
+
+</head>
+<body>
+<div id="j-ad">
+	<div class="ad-img">
+		<a href=""><img src="img/1.jpg"></a>
+		<a href=""><img src="img/2.jpg"></a>
+		<a href=""><img src="img/3.jpg"></a>
+		<a href=""><img src="img/4.jpg"></a>
+	</div>
+	<ul class="num clearfix">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</div>
+<script src="slider.js"></script>
+</body>
+</html>
