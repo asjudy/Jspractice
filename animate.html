@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animate1</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background: #eee;
+			position: relative;
+			left: 10px;
+			top: 0;
+		}
+	</style>
+<script type="text/javascript">
+	window.onload=function (){
+		var o=document.querySelector('#test');
+		o.onmouseover=function(){
+			move(-100);
+		}
+		o.onmouseout=function(){
+			move(0);
+		}
+		var timer=null;
+		function move(target){
+			clearInterval(timer);
+			var speed=0;
+			if(o.offsetLeft-target>0){
+				speed=-10;
+			}else{
+				speed=10;
+			}
+		var tempx=o.offsetLeft;
+		timer=setInterval(function(){
+			if(o.offsetLeft==target){
+				clearInterval(timer);
+			}else{
+				o.style.left=o.offsetLeft+speed+'px';
+			}
+		},100)
+	}
+	}
+</script>
+</head>
+<body>
+<div id="test"></div>
+
+</body>
+</html>
