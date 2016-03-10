@@ -3,12 +3,18 @@
 <head>
 	<title>animate1</title>
 	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
 		div{
+			margin:0;
+			padding: 0;
 			width: 200px;
 			height: 200px;
 			background: #eee;
 			position: relative;
-			left: 10px;
+			left: 0;
 			top: 0;
 		}
 	</style>
@@ -36,6 +42,8 @@
 				clearInterval(timer);
 			}else{
 				o.style.left=o.offsetLeft+speed+'px';
+				// console.log(o.offsetLeft+speed+'px');
+				// console.log(o.offsetLeft+'px');
 			}
 		},100)
 	}
